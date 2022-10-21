@@ -1,0 +1,19 @@
+{
+  "name": "night-owl",
+  "author": "Stephen Hutchings",
+  "scripts": {
+    "watch": "node lib/index.js watch",
+    "build": "node lib/index.js build"
+  },
+  "type": "module",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "marked": "^4.1.1",
+    "mime-types": "^2.1.35",
+    "pug": "^3.0.2",
+    "slugify": "^1.6.5",
+    "ws": "^8.9.0"
+  }
+}
