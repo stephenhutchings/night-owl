@@ -24,8 +24,8 @@ node_modules/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
-.yarn-integrity
+# VS Code settings
+.vscode
 
 # dotenv environment variable files
 .env
