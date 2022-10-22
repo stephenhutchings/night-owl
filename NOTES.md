@@ -7,26 +7,27 @@
 
 // Named template with data
 /src/to/name.pug
-/src/to/name.js
-=> /dist/to/name/index.html called with name.js as data
+=> /dist/to/name/index.html
 
 // Named/unnamed pages template
-/src/to/name.pug
-/src/to/name.js where name.js returns { pages }
+/src/to/name.page.js using { pages: [...] } as data
 => /src/to/name/slug-one/index.html
    /src/to/name/slug-two/index.html
    /src/to/name/slug-two/etc.
 
-// Do the same with markdown files in a directory?
 ```
 
-## Ideas
+## TODO
 
-- global data
-- compute data from files
-- handle asset copy
+- ~~global data~~
+- ~~compute data from files~~
 - ~~markdown~~
 - ~~frontmatter~~
+- ~~handle markdown templates~~
+- ~~load user config~~
+- ~~11ty-style collections~~ Use `tags` property to define collections
+- 11ty-style passthrough copy
+- 11ty-style pagination
 
 Some data is loaded at compile time, some at render time.
 Rendering shouldn't care about loading data. Not sure compile should either.
@@ -41,3 +42,15 @@ Compiler shouldn't store templates, only return render method for a file.
 - page
   - getData
   - getRender
+
+The problem with passing data listing the rendered files is that it requires
+that all pages are rerendered after any change. But rendering is cheap, and
+compilation is expensive, especially for Pug templates.
+
+build => list => compile => render
+watch => compile changes => render
+
+### Data cascade
+
+This has been intentionally removed. Data must be explicitly added to templates.
+However, items in a `pages` array inherit data from the parent template.
