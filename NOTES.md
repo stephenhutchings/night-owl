@@ -54,3 +54,15 @@ watch => compile changes => render
 
 This has been intentionally removed. Data must be explicitly added to templates.
 However, items in a `pages` array inherit data from the parent template.
+
+### Pagination ideas
+
+```js
+paginate: {
+  size: 10,
+  layout: "template.pug",
+  url: "/pages",
+  // or a function for more control
+  url: (i) => `/pages-${i}`
+}
+```
