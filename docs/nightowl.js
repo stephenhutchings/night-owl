@@ -24,11 +24,11 @@ const config = {
       dist: "dist/assets",
       exclude: ".DS_Store",
     },
-    {
-      src: "../../s-ings.com/src/site/public/assets/fonts/Maestro/",
-      dist: "dist/assets/fonts",
-      include: "*.woff2",
-    },
+    // {
+    //   src: "../../s-ings.com/src/site/public/assets/fonts/Maestro/",
+    //   dist: "dist/assets/fonts",
+    //   include: "*.woff2",
+    // },
   ],
 
   watch: ["../README.md"],
