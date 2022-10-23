@@ -1,6 +1,16 @@
 {
   "name": "night-owl",
-  "author": "Stephen Hutchings",
+  "author": {
+    "name": "Stephen Hutchings",
+    "url": "https://www.s-ings.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stephenhutchings/night-owl.git"
+  },
+  "bugs": "https://github.com/stephenhutchings/night-owl/issues",
+  "main": "lib/index.js",
+  "bin": "./lib/index.js",
   "scripts": {
     "start": "node lib/index.js watch serve",
     "watch": "node lib/index.js watch",
@@ -18,5 +28,9 @@
     "pug": "^3.0.2",
     "slugify": "^1.6.5",
     "ws": "^8.9.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
   }
 }
