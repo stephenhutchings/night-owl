@@ -1,18 +1,12 @@
-/** @type {import('../lib/types').Config} */
+/** @type {import('night-owl/lib/types').Config} */
 
 import { marked } from "marked"
-import posthtml from "posthtml"
-import baseUrl from "posthtml-base-url"
+import html from "./utils/transforms/html-prod.js"
 
-const processer = posthtml([baseUrl({ url: "/night-owl", allTags: true })])
+const dev = process.env.NODE_ENV === "dev"
+const transforms = []
 
-const rebase = (content, filename) => {
-  if (filename.endsWith(".html")) {
-    return processer.process(content).then((res) => res.html)
-  } else {
-    return content
-  }
-}
+if (!dev) transforms.push(html)
 
 const config = {
   src: "./src",
@@ -45,7 +39,7 @@ const config = {
 
   watch: ["../README.md"],
 
-  transforms: [rebase],
+  transforms,
 }
 
 export default config
