@@ -26,7 +26,7 @@
 - ~~handle markdown templates~~
 - ~~load user config~~
 - ~~11ty-style collections~~ Use `tags` property to define collections
-- 11ty-style passthrough copy
+- ~~11ty-style passthrough copy~~
 - 11ty-style pagination
 
 ~~Some data is loaded at compile time, some at render time. Rendering shouldn't

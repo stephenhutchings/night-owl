@@ -10,6 +10,14 @@ const config = {
   markedOptions: {
     smartypants: true,
   },
+
+  copy: [
+    {
+      src: "src/assets",
+      dist: "dist/assets",
+      exclude: "**/.DS_Store",
+    },
+  ],
 }
 
 export default config
