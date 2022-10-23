@@ -1,9 +1,5 @@
 name: Build docs
 
-defaults:
-  run:
-    working-directory: docs
-
 on:
   push:
     branches:
@@ -25,21 +21,19 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
-
-      - name: Install dependencies
+      - name: Install night-owl dependencies
         run: npm ci
 
+      - name: Install night-owl
+        run: npm ci
+        working-directory: docs
+
       - name: Build site
-        run: npm run stage
+        run: npm run build
+        working-directory: docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./dist
+          publish_dir: ./docs/dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
