@@ -1,6 +1,18 @@
 /** @type {import('../lib/types').Config} */
 
 import { marked } from "marked"
+import posthtml from "posthtml"
+import baseUrl from "posthtml-base-url"
+
+const processer = posthtml([baseUrl({ url: "/night-owl", allTags: true })])
+
+const rebase = (content, filename) => {
+  if (filename.endsWith(".html")) {
+    return processer.process(content).then((res) => res.html)
+  } else {
+    return content
+  }
+}
 
 const config = {
   src: "./src",
@@ -32,6 +44,8 @@ const config = {
   ],
 
   watch: ["../README.md"],
+
+  transforms: [rebase],
 }
 
 export default config

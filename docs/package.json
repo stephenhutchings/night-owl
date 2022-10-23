@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "night-owl": "file:.."
+    "night-owl": "file:..",
+    "posthtml": "^0.16.6",
+    "posthtml-base-url": "^1.1.0"
   },
   "type": "module"
 }
