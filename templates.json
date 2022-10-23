@@ -1,0 +1,44 @@
+[
+  {
+    "page": {
+      "url": "/404.html",
+      "inputPath": "src/404.pug",
+      "outputPath": "dist/404.html"
+    },
+    "data": {
+      "title": "404 - page not found",
+      "url": "404.html"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/glossary/",
+      "inputPath": "src/docs/glossary.md",
+      "outputPath": "dist/docs/glossary/index.html"
+    },
+    "data": {
+      "layout": "_includes/layouts/article",
+      "content": "<h2 id=\"glossary\">Glossary</h2>\n<h3 id=\"template\">Template</h3>\n<p>A file written in a format such as Markdown, Pug or JavaScript. Templates are\ncompiled and rendered into one or more pages. When templates render, they are\ngiven access to local and global data.</p>\n<h3 id=\"layout\">Layout</h3>\n<p>Templates written in Markdown or JavaScript just contain data and/or content,\nbut don’t include any layout. These templates can use layouts defined by other\nfiles.</p>\n<h3 id=\"page\">Page</h3>\n<p>Pages are created by templates. They are usually HTML files, but can also be any\nother file type. A single template can produce any number of pages.</p>\n<h3 id=\"data\">Data</h3>\n<p>Templates use data to control the way content is rendered. Pug and Markdown\ntemplates might include data in the form of front-mattter, while JavaScript\ntemplates are only data. Data can be retrieved from a global data file, and\nmetadata about a template is also supplied</p>\n<h3 id=\"collection\">Collection</h3>\n<p>A collection is an array of pages grouped together. Collections are created\nby using tags in the template data.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/",
+      "inputPath": "src/index.pug",
+      "outputPath": "dist/index.html"
+    },
+    "data": {
+      "title": "Night Owl"
+    }
+  },
+  {
+    "page": {
+      "url": "/templates.json",
+      "inputPath": "src/output.page.js",
+      "outputPath": "dist/templates.json"
+    },
+    "data": {
+      "url": "templates.json"
+    }
+  }
+]
