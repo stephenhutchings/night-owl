@@ -1,0 +1,7 @@
+footer
+  .wrap
+    ul
+      if footer
+        for item in footer
+          li
+            a(href=item.href)= item.text

@@ -1,0 +1,14 @@
+mixin data(data)
+  - const clone = {...data}
+  - 
+    clone.collections = Object.fromEntries(
+      Object.entries(data.collections)
+      .map(([key, val]) => [key, "[...]"])
+    )
+
+  details.wrap
+    summary Data
+    p This page was rendered with the following data.
+    pre
+      code
+        = JSON.stringify(clone, null, 2)

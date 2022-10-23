@@ -1,0 +1,16 @@
+{
+  "name": "night-owl-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "night-owl --watch --serve",
+    "build": "night-owl --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "night-owl": "file:.."
+  },
+  "type": "module"
+}

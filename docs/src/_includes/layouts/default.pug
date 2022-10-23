@@ -1,0 +1,33 @@
+include /_includes/mixins/data
+
+doctype html
+
+html(lang="en")
+  head
+    block head
+      meta(charset="utf-8")
+      meta(
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+      )
+
+      title= title
+
+      meta(name="format-detection" content="telephone=no")
+      link(rel="stylesheet" href="/assets/styles.css")
+
+  body
+    block page
+      block header
+        include /_includes/partials/header
+
+      block body
+        main.wrap
+          block content
+            != content
+
+      block data
+        +data(locals)
+
+      block footer
+        include /_includes/partials/footer
