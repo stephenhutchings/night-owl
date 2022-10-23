@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "night-owl --watch --serve",
-    "build": "night-owl --build"
+    "start": "NODE_ENV=dev night-owl --watch --serve",
+    "build": "NODE_ENV=prod night-owl --build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "htmlnano": "^2.0.2",
     "night-owl": "file:..",
     "posthtml": "^0.16.6",
     "posthtml-base-url": "^1.1.0"
