@@ -110,4 +110,9 @@ export interface Config {
   markedOptions?: {
     smartypants: boolean
   }
+
+  /**
+   * Append a trailing slash to page URLs
+   */
+  trailingSlash?: boolean
 }
