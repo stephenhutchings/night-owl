@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,11 +26,11 @@ jobs:
 
       - name: Install night-owl
         run: npm ci
-        working-directory: docs
+        working-directory: ./docs
 
       - name: Build site
         run: npm run build
-        working-directory: docs
+        working-directory: ./docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
