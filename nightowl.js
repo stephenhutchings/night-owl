@@ -1,3 +1,5 @@
+/** @type {import('./lib/types').Config} */
+
 const config = {
   src: "./src",
 
