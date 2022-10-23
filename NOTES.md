@@ -29,12 +29,10 @@
 - 11ty-style passthrough copy
 - 11ty-style pagination
 
-Some data is loaded at compile time, some at render time.
-Rendering shouldn't care about loading data. Not sure compile should either.
-
-If is page, add to dictionary. Then compute data and render method.
-
-Compiler shouldn't store templates, only return render method for a file.
+~~Some data is loaded at compile time, some at render time. Rendering shouldn't
+care about loading data. Not sure compile should either. If is page, add to
+dictionary. Then compute data and render method. Compiler shouldn't store
+templates, only return render method for a file.~~
 
 - watch
 - build
@@ -66,3 +64,52 @@ paginate: {
   url: (i) => `/pages-${i}`
 }
 ```
+
+### Config
+
+Un-implemented ideas.
+
+```js
+{
+  // Array of functions that modify the output pages
+  // eg html-min, css-min, js-min
+  transforms: [
+    (content, outputPath) =>
+      (outputPath.endsWith(".html")) ? minify(content) : content
+  ]
+
+  // Any files that match a glob are output to a specified directory
+  // Should transforms be run on these too?
+  copy: {
+    "src/assets": "dist/assets"
+    "inputglob": "outputfolder"
+  }
+
+}
+
+```
+
+### Doc sections
+
+Convert example "./src" to "./docs"
+
+- Build, watch and serve scripts
+- Config
+- Template data
+  - Special properties
+    - pages
+    - tags
+    - url
+    - layout
+    - content
+  - Front-matter
+  - Javascript
+  - Reserved words (produce warnings)
+    - page
+    - collections
+- Global data
+
+### To check
+
+Module dependencies won't retrigger a build. Can a module's dependencies be
+cheaply extracted during compile?
