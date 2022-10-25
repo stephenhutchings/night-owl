@@ -1,5 +1,5 @@
 ---
-layout: _includes/layouts/article
+layout: _includes/layouts/docs
 ---
 
 ## Glossary
