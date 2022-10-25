@@ -69,25 +69,7 @@ paginate: {
 
 Un-implemented ideas.
 
-```js
-{
-  // Array of functions that modify the output pages
-  // eg html-min, css-min, js-min
-  transforms: [
-    (content, outputPath) =>
-      (outputPath.endsWith(".html")) ? minify(content) : content
-  ]
 
-  // Any files that match a glob are output to a specified directory
-  // Should transforms be run on these too?
-  copy: {
-    "src/assets": "dist/assets"
-    "inputglob": "outputfolder"
-  }
-
-}
-
-```
 
 ### Doc sections
 
@@ -107,12 +89,24 @@ Convert example "./src" to "./docs"
   - Reserved words (produce warnings)
     - page
     - collections
+    - filters
 - Global data
+- Night owl data
+  - collections
+  - filters
+- Languages? Engines? Compilers?
+  - pug
+  - js
+  - md
+  - sass
 
 ### To check
 
-Module dependencies won't retrigger a build. Can a module's dependencies be
-cheaply extracted during compile?
+Module dependencies won't retrigger a build.
+q: Can a module's dependencies be cheaply extracted during compile? 
+a: Yes, but the import cache cannot be cleared.
+  - https://github.com/nodejs/modules/issues/307
+  - https://github.com/FredKSchott/esm-hmr
 
 ### No render for serve
 

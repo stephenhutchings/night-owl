@@ -31,7 +31,7 @@ compiled when they or their dependencies change.
 ## Prior art
 
 This project borrows many ideas from other static site generators, including
-11ty, Wintersmith, Metalsmith and others. It aims to solve some specific use
+11ty, Wintersmith and more. It aims to solve some specific use
 cases where other SSGs fall short, and favours convention over customisability.
 In that respect, it may not work for every application.
 

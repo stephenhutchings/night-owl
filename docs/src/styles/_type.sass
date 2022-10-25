@@ -1,0 +1,177 @@
+// Alignment
+.txt-al
+  text-align: left
+.txt-ar
+  text-align: right
+.txt-ac
+  text-align: center
+.txt-aj
+  text-align: justify
+
+.txt-hyphens
+  hyphens: auto
+
+  a
+    hyphens: none
+
+// Wrapping
+.txt-nowrap
+  white-space: nowrap
+.txt-pre
+  white-space: pre-line
+.txt-ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Style
+.txt-italic, em
+  font-style: italic
+h1 > em, .txt-roman
+  font-style: normal
+
+// Weight
+h1, h2, h3, h4, strong, b, i, dt, .txt-bold
+  font-weight: 700
+h1 > em, .txt-normal
+  font-weight: normal
+
+// Size
+.txt-xxl
+  font-size: 44px
+  line-height: 48px
+  @media (max-width: 480px)
+    font-size: 32px
+    line-height: 36px
+
+h1, .txt-xl
+  font-size: 28px
+  line-height: 1.25
+  letter-spacing: -0.02em
+
+  @media (max-width: 480px)
+    font-size: 24px
+
+.txt-lg
+  font-size: 21px
+  line-height: 1.3
+  letter-spacing: -0.01em
+
+h2, .txt-md
+  font-size: 18px
+h3, .txt-base
+  font-size: 17px
+h4, .txt-sm, small
+  font-size: 13px
+
+// Normalization
+sub, sup
+  font-size: 50%
+  line-height: 0
+
+// OpenType features
+.num-tf
+  font-feature-settings: "tnum"
+
+.num-pf
+  font-feature-settings: "pnum"
+
+.num-osf
+  font-feature-settings: "onum"
+
+.num-tosf
+  font-feature-settings: "onum","tnum"
+
+.num-frac
+  font-feature-settings: "frac" 1,"kern" 1
+
+.txt-dnom
+  font-feature-settings: "dnom"
+
+.txt-numr
+  font-feature-settings: "numr"
+
+.txt-dlig
+  font-feature-settings: "kern" 1,"dlig" 1
+
+.txt-sc
+  font-feature-settings: "c2sc"
+
+.txt-sup
+  font-feature-settings: "sups"
+
+.txt-sub
+  font-feature-settings: "subs"
+
+.txt-liga
+  font-feature-settings: "liga"
+
+.ss-01
+  font-feature-settings: "kern" 1,"liga" 1,"ss01" 1
+
+.ss-02
+  font-feature-settings: "kern" 1,"liga" 1,"ss02" 1
+
+.ss-03
+  font-feature-settings: "kern" 1,"liga" 1,"ss03" 1
+
+.ss-04
+  font-feature-settings: "kern" 1,"liga" 1,"ss04" 1
+
+.ss-05
+  font-feature-settings: "kern" 1,"liga" 1,"ss05" 1
+
+.ss-06
+  font-feature-settings: "kern" 1,"liga" 1,"ss06" 1
+
+.txt-sup, .txt-sub
+  font: inherit
+  vertical-align: inherit
+
+.txt-vb
+  vertical-align: middle
+
+.txt-vm
+  vertical-align: middle
+
+// Transformation
+.txt-lowercase
+  text-transform: lowercase
+h4, .txt-uppercase, .txt-tu
+  text-transform: uppercase
+  letter-spacing: 0.1em
+  font-feature-settings: "case" 1
+.txt-capitalize
+  text-transform: capitalize
+
+ol, ul
+  &.list-inline,
+  &.list-bare
+    padding: 0
+    list-style: none
+
+  &.list-inline
+    li
+      display: inline-block
+
+      + li
+        margin-left: 8px
+        &:before
+          content: "•"
+          margin-right: 8px
+
+hr
+  border: 0
+  border-bottom: 1px solid #6789
+  height: 0
+  clear: both
+
+\:last-child
+  margin-bottom: 0
+
+.td-none
+  text-decoration: none
+
+.td-line
+  text-decoration: underline
+
