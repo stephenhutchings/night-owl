@@ -2,21 +2,21 @@
 
 Night Owl is a static site generator which prioritises speed over flexibility.
 
-Night Owl provides:
+Night Owl features:
 
 - Zero-config by default
 - File-based routing, with configurable URLs
 - One-to-many pages
 - Pug, Markdown or JavaScript templates
-- Build, watch and serve
+- Build, watch and serve commands
 
-### Why not use another tool?
+## Why not use another tool?
 
 The driving purpose behind Night Owl is to provide a fast tool to develop static
-sites using the Pug templating library. Of all the different template
-engines, Pug reduces HTML to a beautiful syntax. However, most SSGs fail to
-deliver an ergonomic development experience because of Pug's slow template
-compilation.
+sites using Pug templates. Of all the different templating languages, Pug
+reduces HTML down into an extraordinarily elegant syntax. However, most static
+site generators (SSG) fail to deliver an ergonomic development experience because
+of Pug's slow template compilation.
 
 Night Owl aims to avoid this slowdown by separating the rendering and
 compilation steps. Templates use incremental compilation – they are only

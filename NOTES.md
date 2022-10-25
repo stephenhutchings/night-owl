@@ -113,3 +113,11 @@ Convert example "./src" to "./docs"
 
 Module dependencies won't retrigger a build. Can a module's dependencies be
 cheaply extracted during compile?
+
+### No render for serve
+
+If running serve and watch, don't render everything (anything?) to disk. Just
+let the server request a specific URL, check if it exists in the pages array,
+and render on demand. Would also need to check if it exists in the copy and
+proxy requests through. Could it even be the import cache fix using a custom
+resolver?
