@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   src: url("/assets/fonts/Maestro-Light.woff2");
   font-family: "maestro";
@@ -10,7 +11,7 @@
 html {
   font-family: "maestro", system-ui, sans-serif;
   background: #012;
-  /* background: red; */
+  /* background: red */
   color: #dcd;
   font-size: 18px;
   letter-spacing: 0.005em;
@@ -69,6 +70,10 @@ header {
   font-weight: bold;
 }
 
+header img {
+  margin-right: 0.5em;
+}
+
 header a {
   text-decoration: none;
   display: flex;
@@ -102,6 +107,394 @@ h3 {
 
 * + h2 {
   margin-top: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.txt-al {
+  text-align: left;
+}
+
+.txt-ar {
+  text-align: right;
+}
+
+.txt-ac {
+  text-align: center;
+}
+
+.txt-aj {
+  text-align: justify;
+}
+
+.txt-hyphens {
+  hyphens: auto;
+}
+.txt-hyphens a {
+  hyphens: none;
+}
+
+.txt-nowrap {
+  white-space: nowrap;
+}
+
+.txt-pre {
+  white-space: pre-line;
+}
+
+.txt-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.txt-italic, em {
+  font-style: italic;
+}
+
+h1 > em, .txt-roman {
+  font-style: normal;
+}
+
+h1, h2, h3, h4, strong, b, i, dt, .txt-bold {
+  font-weight: 700;
+}
+
+h1 > em, .txt-normal {
+  font-weight: normal;
+}
+
+.txt-xxl {
+  font-size: 44px;
+  line-height: 48px;
+}
+@media (max-width: 480px) {
+  .txt-xxl {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+h1, .txt-xl {
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 480px) {
+  h1, .txt-xl {
+    font-size: 24px;
+  }
+}
+
+.txt-lg {
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h2, .txt-md {
+  font-size: 18px;
+}
+
+h3, .txt-base {
+  font-size: 17px;
+}
+
+h4, .txt-sm, small {
+  font-size: 13px;
+}
+
+sub, sup {
+  font-size: 50%;
+  line-height: 0;
+}
+
+.num-tf {
+  font-feature-settings: "tnum";
+}
+
+.num-pf {
+  font-feature-settings: "pnum";
+}
+
+.num-osf {
+  font-feature-settings: "onum";
+}
+
+.num-tosf {
+  font-feature-settings: "onum", "tnum";
+}
+
+.num-frac {
+  font-feature-settings: "frac" 1, "kern" 1;
+}
+
+.txt-dnom {
+  font-feature-settings: "dnom";
+}
+
+.txt-numr {
+  font-feature-settings: "numr";
+}
+
+.txt-dlig {
+  font-feature-settings: "kern" 1, "dlig" 1;
+}
+
+.txt-sc {
+  font-feature-settings: "c2sc";
+}
+
+.txt-sup {
+  font-feature-settings: "sups";
+}
+
+.txt-sub {
+  font-feature-settings: "subs";
+}
+
+.txt-liga {
+  font-feature-settings: "liga";
+}
+
+.ss-01 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
+}
+
+.ss-02 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss02" 1;
+}
+
+.ss-03 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss03" 1;
+}
+
+.ss-04 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss04" 1;
+}
+
+.ss-05 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss05" 1;
+}
+
+.ss-06 {
+  font-feature-settings: "kern" 1, "liga" 1, "ss06" 1;
+}
+
+.txt-sup, .txt-sub {
+  font: inherit;
+  vertical-align: inherit;
+}
+
+.txt-vb {
+  vertical-align: middle;
+}
+
+.txt-vm {
+  vertical-align: middle;
+}
+
+.txt-lowercase {
+  text-transform: lowercase;
+}
+
+h4, .txt-uppercase, .txt-tu {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-feature-settings: "case" 1;
+}
+
+.txt-capitalize {
+  text-transform: capitalize;
+}
+
+ol.list-inline, ol.list-bare, ul.list-inline, ul.list-bare {
+  padding: 0;
+  list-style: none;
+}
+ol.list-inline li, ul.list-inline li {
+  display: inline-block;
+}
+ol.list-inline li + li, ul.list-inline li + li {
+  margin-left: 8px;
+}
+ol.list-inline li + li:before, ul.list-inline li + li:before {
+  content: "•";
+  margin-right: 8px;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid rgba(102, 119, 136, 0.6);
+  height: 0;
+  clear: both;
+}
+
+:last-child {
+  margin-bottom: 0;
+}
+
+.td-none {
+  text-decoration: none;
+}
+
+.td-line {
+  text-decoration: underline;
+}
+
+#sidebar {
+  font-size: 16px;
+}
+#sidebar section + section {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+#nav-header {
+  height: 3em;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+  position: relative;
+  background: #012;
+  background-clip: padding-box;
+}
+
+#nav-button {
+  padding: 0.75em;
+  margin-left: -0.75em;
+  border-radius: 0;
+}
+
+#nav-toggle:checked + #nav-content {
+  opacity: 1;
+  transform: translateZ(0);
+  pointer-events: all;
+}
+
+#example-code,
+#example-code code,
+#example-code pre {
+  height: 100%;
+}
+
+#example-code pre {
+  margin-bottom: 0;
+}
+
+@media (min-width: 601px) {
+  #sidebar {
+    min-width: 160px;
+  }
+}
+@media (min-height: 800px) {
+  #sidebar {
+    top: 1em;
+    position: sticky;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  #sidebar {
+    font-size: 16px;
+    z-index: 1;
+    top: -2px;
+    position: sticky;
+  }
+  #sidebar ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.5rem -0.25rem;
+  }
+  #sidebar li {
+    margin: 0 0.25rem 0.5rem;
+  }
+  #sidebar a {
+    padding: 0.25rem 0.75rem;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  #sidebar a:hover, #sidebar a:focus {
+    text-decoration: none;
+    background: grey;
+  }
+  #nav-content {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    right: -1rem;
+    margin-top: -1px;
+    height: calc(100vh - 3em);
+    flex-direction: column;
+    z-index: -1;
+    display: flex !important;
+    opacity: 0;
+    transform: translate3d(0, -40px, 0);
+    pointer-events: none;
+    transition: opacity 300ms, transform 300ms;
+  }
+  #nav-sections {
+    background: #012;
+    padding: 1rem;
+    overflow: auto;
+  }
+  #nav-exit {
+    flex-grow: 1;
+    background: rgba(102, 119, 136, 0.6);
+    margin: 0;
+  }
+}
+article h1 {
+  margin-bottom: 0.3125em;
+}
+article h2 {
+  margin: 3em 0 0.5em;
+}
+article h3, article h4 {
+  margin: 0.5em 0;
+}
+article ol, article ul, article dd, article figure {
+  margin: 0;
+}
+article p, article pre, article dl, article dd, article ul, article ol, article table {
+  margin-bottom: 1.5em;
+}
+article ol, article ul {
+  padding: 0 0 0 1.1em;
+}
+article li {
+  margin-bottom: 0.5em;
+}
+article hr {
+  margin: 1.6em 0;
+}
+article .table {
+  border: 1px solid rgba(102, 119, 136, 0.6);
+  border-radius: 3px;
+  margin-bottom: 2em;
+}
+article table {
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 100%;
+}
+article table p {
+  margin-bottom: 0.5em;
+}
+article th,
+article td {
+  padding: 0.5em;
+}
+article table thead th,
+article table thead td {
+  border-bottom: 3px solid rgba(102, 119, 136, 0.6);
+}
+article tr + tr th,
+article tr + tr td {
+  border-top: 1px solid rgba(102, 119, 136, 0.6);
 }
 
 .hljs-bullet,
@@ -188,106 +581,4 @@ h3 {
 .hljs-meta,
 .hljs-quote {
   color: #6b6272;
-}
-
-#sidebar {
-  font-size: 16px;
-}
-#sidebar section + section {
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-  margin-top: 1rem;
-}
-
-#nav-header {
-  height: 3em;
-  border-bottom: 1px solid rgba(204, 204, 204, 0.2);
-  position: relative;
-  background: white;
-  background-clip: padding-box;
-}
-
-#nav-button {
-  padding: 0.75em;
-  margin-left: -0.75em;
-  border-radius: 0;
-}
-
-#nav-toggle:checked + #nav-content {
-  opacity: 1;
-  transform: translateZ(0);
-  pointer-events: all;
-}
-
-#example-code,
-#example-code code,
-#example-code pre {
-  height: 100%;
-}
-
-#example-code pre {
-  margin-bottom: 0;
-}
-
-@media (min-width: 601px) {
-  #sidebar {
-    min-width: 160px;
-  }
-}
-@media (min-height: 800px) {
-  #sidebar {
-    top: 1em;
-    position: sticky;
-    align-self: flex-start;
-  }
-}
-@media (max-width: 600px) {
-  #sidebar {
-    font-size: 16px;
-    z-index: 1;
-    top: -2px;
-    position: sticky;
-  }
-  #sidebar ul {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0.5rem -0.25rem;
-  }
-  #sidebar li {
-    margin: 0 0.25rem 0.5rem;
-  }
-  #sidebar a {
-    padding: 0.25rem 0.75rem;
-    display: block;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-  }
-  #sidebar a:hover, #sidebar a:focus {
-    text-decoration: none;
-    background: grey;
-  }
-  #nav-content {
-    position: absolute;
-    top: 100%;
-    left: -1rem;
-    right: -1rem;
-    margin-top: -1px;
-    height: calc(100vh - 3em);
-    flex-direction: column;
-    z-index: -1;
-    display: flex !important;
-    opacity: 0;
-    transform: translate3d(0, -40px, 0);
-    pointer-events: none;
-    transition: opacity 300ms, transform 300ms;
-  }
-  #nav-sections {
-    background: white;
-    padding: 1rem;
-    overflow: auto;
-  }
-  #nav-exit {
-    flex-grow: 1;
-    background: rgba(0, 0, 255, 0.6);
-  }
 }
