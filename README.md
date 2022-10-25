@@ -7,7 +7,7 @@ Night Owl features:
 - Zero-config by default
 - File-based routing, with configurable URLs
 - One-to-many pages
-- Pug, Markdown or JavaScript templates
+- Pug, Markdown, Sass or JavaScript templates
 - Build, watch and serve commands
 
 ## Why not use another tool?
