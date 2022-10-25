@@ -143,8 +143,7 @@
       "outputPath": "dist/output.json"
     },
     "data": {
-      "url": "output.json",
-      "random": 0.6724295739081267
+      "url": "output.json"
     }
   },
   {
@@ -174,7 +173,7 @@
       ],
       "sort": 1,
       "date": "2018-02-01T00:00:00.000Z",
-      "content": "<p>Configuration files are optional.</p>\n<p>Add a file called <code>nightowl.js</code> to the root directory of your project to change\nthe default configuration.</p>\n<p>The file is a module that declares an object as the default export. A basic\nconfiguration file might set input and output directories, like this:</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// The location of your source files</span>\n  <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;./src&quot;</span>,\n\n  <span class=\"hljs-comment\">// The output destination for built files</span>\n  <span class=\"hljs-attr\">dist</span>: <span class=\"hljs-string\">&quot;./dist&quot;</span>,\n}\n</code></pre>\n"
+      "content": "<p>Add a file called <code>nightowl.js</code> to the root directory of your project to change\nthe default configuration. Configuration files are optional.</p>\n<p>The file is a module that declares an object as the default export. A basic\nconfiguration file might set input and output directories, like this:</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// The location of your source files</span>\n  <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;./src&quot;</span>,\n\n  <span class=\"hljs-comment\">// The output destination for built files</span>\n  <span class=\"hljs-attr\">dist</span>: <span class=\"hljs-string\">&quot;./dist&quot;</span>,\n}\n</code></pre>\n"
     }
   },
   {
