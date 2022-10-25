@@ -1,0 +1,94 @@
+#sidebar
+  font-size: 16px
+
+  section + section
+    border-top: 1px solid #ccc
+    padding-top: 1rem
+    margin-top: 1rem
+
+#nav-header
+  height: 3em
+
+  border-bottom: 1px solid #ccc3
+  position: relative
+  background: white
+  background-clip: padding-box
+
+#nav-button
+  padding: 0.75em
+  margin-left: -0.75em
+  border-radius: 0
+
+#nav-toggle:checked + #nav-content
+  opacity: 1
+  transform: translateZ(0)
+  pointer-events: all
+
+#example-code,
+#example-code code,
+#example-code pre
+  height: 100%
+
+#example-code pre
+  margin-bottom: 0
+
+@media (min-width: 601px)
+  #sidebar
+    min-width: 160px
+
+@media (min-height: 800px)
+  #sidebar
+    top: 1em
+    position: sticky
+    align-self: flex-start
+
+@media (max-width: 600px)
+  #sidebar
+    font-size: 16px
+    z-index: 1
+    top: -2px
+    position: sticky
+
+    ul
+      display: flex
+      flex-flow: row wrap
+      margin: 0.5rem -0.25rem
+
+    li
+      margin: 0 0.25rem 0.5rem
+
+    a
+      padding: 0.25rem 0.75rem
+      display: block
+      border-radius: 3px
+      border: 1px solid #ccc
+
+      &:hover,
+      &:focus
+        text-decoration: none
+        background: grey
+
+  #nav-content
+    position: absolute
+    top: 100%
+    left: -1rem
+    right: -1rem
+    margin-top: -1px
+    height: calc(100vh - 3em)
+
+    flex-direction: column
+    z-index: -1
+    display: flex !important
+    opacity: 0
+    transform: translate3d(0, -40px, 0)
+    pointer-events: none
+    transition: opacity 300ms, transform 300ms
+
+  #nav-sections
+    background: white
+    padding: 1rem
+    overflow: auto
+
+  #nav-exit
+    flex-grow: 1
+    background: rgba(blue, 0.6)

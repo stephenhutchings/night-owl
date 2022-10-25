@@ -13,7 +13,7 @@ html {
   font-family: "maestro", system-ui, sans-serif;
   background: #012;
   /* background: red; */
-  color: #abc;
+  color: #dcd;
   font-size: 18px;
   letter-spacing: 0.005em;
 }
@@ -51,7 +51,7 @@ a:hover {
 }
 
 ::selection {
-  background-color: #648;
+  background-color: #c4d6;
 }
 
 .wrap {
@@ -79,10 +79,29 @@ header a {
   align-content: center;
 }
 
+code {
+  font-family: Menlo, monospace;
+  font-weight: bold;
+  font-size: 89%;
+}
+
 pre code {
+  font-weight: normal;
   background: #123;
   display: block;
   padding: 1rem;
-  font-size: 89%;
   white-space: pre-wrap;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+h2,
+h3 {
+  font-size: 1.2em;
+}
+
+* + h2 {
+  margin-top: 3rem;
 }

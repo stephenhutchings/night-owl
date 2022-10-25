@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "highlight.js": "^11.6.0",
     "htmlnano": "^2.0.2",
     "night-owl": "file:..",
     "posthtml": "^0.16.6",
     "posthtml-base-url": "^1.1.0"
   },
+  "private": true,
   "type": "module"
 }

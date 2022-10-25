@@ -1,14 +1,33 @@
 mixin data(data)
-  - const clone = {...data}
   - 
-    clone.collections = Object.fromEntries(
-      Object.entries(data.collections)
-      .map(([key, val]) => [key, "[...]"])
-    )
+    const replacer = (key, val) => {
+      if (key === "content") {
+        return "..."
+      }
+      
+      if (key === "collections") {
+        return Object.fromEntries(
+          Object
+            .entries(data.collections)
+            .map(([key, val]) => [key, "@@@@@"])
+        )
+      }
+
+      return val  
+    }
+
+    const code = JSON.stringify(data, replacer, 2).replace(/"@@@@@"/g, "[...]")
+
+    //- clone.collections = Object.fromEntries(
+    //-   Object.entries(data.collections)
+    //-   .map(([key, val]) => [key, "[...]"])
+    //- )
+
+    //- if (clone.content) clone.content = "..."
 
   details.wrap
     summary Data
     p This page was rendered with the following data.
     pre
       code
-        = JSON.stringify(clone, null, 2)
+        != filters.highlight(code, "json")

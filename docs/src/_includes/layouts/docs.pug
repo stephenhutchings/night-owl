@@ -1,0 +1,20 @@
+---
+keys: 
+  - configuration
+  - commands
+  - templates
+---
+
+extends default
+
+block content
+  nav
+    each key in keys
+      = key
+      each item in collections[key]
+        a(href=item.page.url)= item.data.title
+
+  article
+    h1= title
+    block article
+      != content

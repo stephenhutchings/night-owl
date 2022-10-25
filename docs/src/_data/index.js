@@ -1,7 +1,7 @@
 export default {
   footer: [
     {
-      href: "/templates.json",
+      href: "/output.json",
       text: "Output",
     },
     {

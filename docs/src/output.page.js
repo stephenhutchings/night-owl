@@ -1,6 +1,7 @@
+import random from "./_data/random.js"
+
 export default {
-  url: "templates.json",
-  render: (data) => {
-    return JSON.stringify(data.collections.all, null, 2)
-  },
+  url: "output.json",
+  random,
+  render: (data) => JSON.stringify(data.collections.all, null, 2),
 }
