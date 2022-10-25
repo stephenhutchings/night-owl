@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Layouts</title><meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="/night-owl/styles/index.css"><link rel="icon shortcut" href="/night-owl/assets/favicon.svg"></head><body> <header> <div class="wrap"><a href="/night-owl/"> <img src="/night-owl/assets/logo.svg" width="48">Night Owl</a></div> </header> <main class="wrap"> <nav>configuration<a href="/night-owl/docs/configuration/">Configuration</a><a href="/night-owl/docs/configuration/global-data/">Global data</a><a href="/night-owl/docs/configuration/copy/">Copy assets</a>commands<a href="/night-owl/docs/commands/build/">Build</a><a href="/night-owl/docs/commands/serve/">Serve</a><a href="/night-owl/docs/commands/watch/">Watch</a>templates<a href="/night-owl/docs/templates/">Templates</a><a href="/night-owl/docs/templates/layouts/">Layouts</a> </nav> <article> <h1>Layouts</h1><p>Templates written in Markdown or JavaScript just contain data and/or content, but don’t include any <code>layout</code>. These templates can use a separate Pug file to control how their content is rendered.</p> <h2 id="markdown">Markdown</h2> <p>For a Markdown template, declare a <code>layout</code> in your front-matter.</p> <pre><code class="language-md">---
+<span class="hljs-section">layout: &quot;/my-layout&quot;
+---</span>
+</code></pre> <h2 id="javascript">JavaScript</h2> <p>For a JavaScript template, declare a <code>layout</code> in your data.</p> <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">layout</span>: <span class="hljs-string">&quot;/my-layout&quot;</span>,
+}
+</code></pre> <p>An alternative way to control how JavaScript templates render is to add a <code>render</code> function.</p> <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-comment">// This will output a JSON string representing your data</span>
+  <span class="hljs-attr">render</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) {
+    <span class="hljs-keyword">return</span> <span class="class_ hljs-title">JSON</span>.<span class="function_ hljs-title">stringify</span>(data)
+  },
+}
+</code></pre> <h2 id="layout-data">Layout data</h2> <p>Layouts can also declare data using front-matter.</p> <pre><code class="language-md">---
+<span class="hljs-section">myVariable: 42
+---</span>
+
+extends default-layout
+</code></pre> <p>However, you cannot use front-matter in any files that a layout extends or includes. In the example above, using front-matter in <code>default-layout.pug</code> will cause an error.</p> </article> </main> <details class="wrap"> <summary>Data</summary> <p>This page was rendered with the following data.</p> <pre><code><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;footer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/output.json&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Output&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.s-ings.com/&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s-ings.com&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;collections&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;all&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;commands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;templates&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;configuration&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;filters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;keys&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;configuration&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;commands&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;templates&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Layouts&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;layout&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;_includes/layouts/docs&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;tags&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;templates&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;page&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/docs/templates/layouts/&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;inputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;src/docs/templates/layouts.md&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;outputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dist/docs/templates/layouts/index.html&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre> </details> <footer> <div class="wrap"> <ul> <li><a href="/night-owl/output.json">Output</a></li> <li><a href="https://www.s-ings.com/">s-ings.com</a></li> </ul> </div> </footer> </body></html>

@@ -1,0 +1,222 @@
+[
+  {
+    "page": {
+      "url": "/404.html",
+      "inputPath": "src/404.pug",
+      "outputPath": "dist/404.html"
+    },
+    "data": {
+      "title": "404 - page not found",
+      "url": "404.html"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/commands/build/",
+      "inputPath": "src/docs/commands/build.md",
+      "outputPath": "dist/docs/commands/build/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Build",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "commands"
+      ],
+      "content": "<p>In your <code>package.json</code> scripts, add the Night Owl <code>--build</code> command option.</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;build&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;night-owl --build&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<p>You can now run Night Owl from the command line.</p>\n<pre><code class=\"language-bash\">npm run build\n</code></pre>\n<h2 id=\"running-a-production-build\">Running a production build</h2>\n<p>During <code>build</code>, you may want to run extra transforms on your output. One way to\ndo that is to set a <code>NODE_ENV</code> variable before invoking Night Owl.</p>\n<p>For example…</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;build&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;NODE_ENV=production night-owl --build&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<p>Then adjust your <a href=\"../config/\"><code>config</code></a> to use the new environment variable.</p>\n<p>For example</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">import</span> someMinifier <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">&quot;someMinifier&quot;</span>\n\n<span class=\"hljs-keyword\">const</span> isProduction = process.<span class=\"hljs-property\">env</span>.<span class=\"hljs-property\">NODE_ENV</span> === <span class=\"hljs-string\">&quot;production&quot;</span>\n\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-attr\">transforms</span>: isProduction ? [someMinifier] : <span class=\"hljs-literal\">undefined</span>,\n}\n</code></pre>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/commands/serve/",
+      "inputPath": "src/docs/commands/serve.md",
+      "outputPath": "dist/docs/commands/serve/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Serve",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "commands"
+      ],
+      "content": "<p>In your <code>package.json</code> scripts, add the Night Owl <code>--serve</code> command option.</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;serve&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;night-owl --serve&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<p>You can now run Night Owl from the command line.</p>\n<pre><code class=\"language-bash\">npm run serve\n</code></pre>\n<h2 id=\"combining-watch-and-serve\">Combining watch and serve</h2>\n<p>Usually, you will call <code>serve</code> and <a href=\"../watch/\"><code>watch</code></a> together.</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;start&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;night-owl --watch --serve&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<h2 id=\"live-reloading\">Live reloading</h2>\n<p>When Night Owl detects a change, it will reload the page. If only a CSS file has\nchanged, it will reload all the CSS links on the page.</p>\n<h2 id=\"setting-the-port\">Setting the port</h2>\n<p>You can configure which port to use in your <a href=\"../config/\"><code>config</code></a>. The default\nis <code>8080</code>.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-attr\">port</span>: <span class=\"hljs-number\">3000</span>,\n}\n</code></pre>\n<p>If the port is unavailable, Night Owl will increment the number a handful of\ntimes to find one that is available.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/commands/watch/",
+      "inputPath": "src/docs/commands/watch.md",
+      "outputPath": "dist/docs/commands/watch/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Watch",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "commands"
+      ],
+      "content": "<p>In your <code>package.json</code> scripts, add the Night Owl <code>--watch</code> command option.</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;watch&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;night-owl --watch&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<p>You can now run Night Owl from the command line.</p>\n<pre><code class=\"language-bash\">npm run watch\n</code></pre>\n<h2 id=\"combining-watch-and-serve\">Combining watch and serve</h2>\n<p>Usually, you will call <code>watch</code> and <a href=\"../serve/\"><code>serve</code></a> together.</p>\n<pre><code class=\"language-json\"><span class=\"hljs-punctuation\">{</span>\n  <span class=\"hljs-attr\">&quot;scripts&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-punctuation\">{</span>\n    <span class=\"hljs-attr\">&quot;start&quot;</span><span class=\"hljs-punctuation\">:</span> <span class=\"hljs-string\">&quot;night-owl --watch --serve&quot;</span>\n  <span class=\"hljs-punctuation\">}</span>\n<span class=\"hljs-punctuation\">}</span>\n</code></pre>\n<h2 id=\"watching-other-files\">Watching other files</h2>\n<p>If you need other files to trigger a build, add them to <code>watch</code> in your Night Owl\n<a href=\"../configuration/\"><code>configuration file</code></a>.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// When this file changes,</span>\n  <span class=\"hljs-attr\">watch</span>: [<span class=\"hljs-string\">&quot;./dist/assets/compiled.js&quot;</span>],\n}\n</code></pre>\n<p>This can be useful for files that aren’t within your <code>src</code> directory, or if you\nare building some files with a different process.</p>\n<h2 id=\"start-up\">Start-up</h2>\n<p>When you run the <code>watch</code> command, it will run <a href=\"../build/\"><code>build</code></a> first.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/more/glossary/",
+      "inputPath": "src/docs/more/glossary.md",
+      "outputPath": "dist/docs/more/glossary/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "layout": "_includes/layouts/docs",
+      "content": "<h2 id=\"glossary\">Glossary</h2>\n<h3 id=\"template\">Template</h3>\n<p>A file written in a format such as Markdown, Pug or JavaScript. Templates are\ncompiled and rendered into one or more pages. When templates render, they are\ngiven access to local and global data.</p>\n<h3 id=\"layout\">Layout</h3>\n<p>Templates written in Markdown or JavaScript just contain data and/or content,\nbut don’t include any layout. These templates can use layouts defined by other\nfiles.</p>\n<h3 id=\"page\">Page</h3>\n<p>Pages are created by templates. They are usually HTML files, but can also be any\nother file type. A single template can produce any number of pages.</p>\n<h3 id=\"data\">Data</h3>\n<p>Templates use data to control the way content is rendered. Pug and Markdown\ntemplates might include data in the form of front-mattter, while JavaScript\ntemplates are only data. Data can be retrieved from a global data file, and\nmetadata about a template is also supplied</p>\n<h3 id=\"collection\">Collection</h3>\n<p>A collection is an array of pages grouped together. Collections are created\nby using tags in the template data.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/templates/",
+      "inputPath": "src/docs/templates/index.md",
+      "outputPath": "dist/docs/templates/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Templates",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "templates"
+      ],
+      "content": "<p>Configuration files are optional.</p>\n<p>Add a file called <code>nightowl.js</code> to the root directory of your project to change\nthe default configuration.</p>\n<p>The file is a module that declares an object as the default export. A basic\nconfiguration file might set input and output directories, like this:</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// The location of your source files</span>\n  <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;./src&quot;</span>,\n\n  <span class=\"hljs-comment\">// The output destination for built files</span>\n  <span class=\"hljs-attr\">dist</span>: <span class=\"hljs-string\">&quot;./dist&quot;</span>,\n}\n</code></pre>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/templates/layouts/",
+      "inputPath": "src/docs/templates/layouts.md",
+      "outputPath": "dist/docs/templates/layouts/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Layouts",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "templates"
+      ],
+      "content": "<p>Templates written in Markdown or JavaScript just contain data and/or content,\nbut don’t include any <code>layout</code>. These templates can use a separate Pug file to\ncontrol how their content is rendered.</p>\n<h2 id=\"markdown\">Markdown</h2>\n<p>For a Markdown template, declare a <code>layout</code> in your front-matter.</p>\n<pre><code class=\"language-md\">---\n<span class=\"hljs-section\">layout: &quot;/my-layout&quot;\n---</span>\n</code></pre>\n<h2 id=\"javascript\">JavaScript</h2>\n<p>For a JavaScript template, declare a <code>layout</code> in your data.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-attr\">layout</span>: <span class=\"hljs-string\">&quot;/my-layout&quot;</span>,\n}\n</code></pre>\n<p>An alternative way to control how JavaScript templates render is to add a\n<code>render</code> function.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// This will output a JSON string representing your data</span>\n  <span class=\"hljs-attr\">render</span>: <span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\">data</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-title class_\">JSON</span>.<span class=\"hljs-title function_\">stringify</span>(data)\n  },\n}\n</code></pre>\n<h2 id=\"layout-data\">Layout data</h2>\n<p>Layouts can also declare data using front-matter.</p>\n<pre><code class=\"language-md\">---\n<span class=\"hljs-section\">myVariable: 42\n---</span>\n\nextends default-layout\n</code></pre>\n<p>However, you cannot use front-matter in any files that a layout extends or\nincludes. In the example above, using front-matter in <code>default-layout.pug</code> will\ncause an error.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/",
+      "inputPath": "src/index.pug",
+      "outputPath": "dist/index.html"
+    },
+    "data": {
+      "title": "Night Owl"
+    }
+  },
+  {
+    "page": {
+      "url": "/output.json",
+      "inputPath": "src/output.page.js",
+      "outputPath": "dist/output.json"
+    },
+    "data": {
+      "url": "output.json",
+      "random": 0.6724295739081267
+    }
+  },
+  {
+    "page": {
+      "url": "/styles/index.css",
+      "inputPath": "src/styles/index.sass",
+      "outputPath": "dist/styles/index.css"
+    },
+    "data": {}
+  },
+  {
+    "page": {
+      "url": "/docs/configuration/",
+      "inputPath": "src/docs/configuration/index.md",
+      "outputPath": "dist/docs/configuration/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Configuration",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "configuration"
+      ],
+      "sort": 1,
+      "date": "2018-02-01T00:00:00.000Z",
+      "content": "<p>Configuration files are optional.</p>\n<p>Add a file called <code>nightowl.js</code> to the root directory of your project to change\nthe default configuration.</p>\n<p>The file is a module that declares an object as the default export. A basic\nconfiguration file might set input and output directories, like this:</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// The location of your source files</span>\n  <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;./src&quot;</span>,\n\n  <span class=\"hljs-comment\">// The output destination for built files</span>\n  <span class=\"hljs-attr\">dist</span>: <span class=\"hljs-string\">&quot;./dist&quot;</span>,\n}\n</code></pre>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/configuration/global-data/",
+      "inputPath": "src/docs/configuration/global-data.md",
+      "outputPath": "dist/docs/configuration/global-data/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Global data",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "configuration"
+      ],
+      "sort": 2,
+      "content": "<p>Templates have access to local and global data. To use global data in your\nproject, point to an entry file in your project <a href=\"../index/\"><code>config</code></a>.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-comment\">// The location of your global data file</span>\n  <span class=\"hljs-attr\">data</span>: <span class=\"hljs-string\">&quot;./src/_data/index.js&quot;</span>,\n}\n</code></pre>\n<p>If the same keys are present in your template data, the local data will override\nthe global data for that file.</p>\n"
+    }
+  },
+  {
+    "page": {
+      "url": "/docs/configuration/copy/",
+      "inputPath": "src/docs/configuration/copy.md",
+      "outputPath": "dist/docs/configuration/copy/index.html"
+    },
+    "data": {
+      "keys": [
+        "configuration",
+        "commands",
+        "templates"
+      ],
+      "title": "Copy assets",
+      "layout": "_includes/layouts/docs",
+      "tags": [
+        "configuration"
+      ],
+      "sort": 3,
+      "content": "<p>If you need to copy assets from one location to another, use <code>copy</code>.</p>\n<p>Use an array of rule objects to choose which files should be copied.</p>\n<pre><code class=\"language-js\"><span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> {\n  <span class=\"hljs-attr\">copy</span>: [\n    {\n      <span class=\"hljs-comment\">// Required properties</span>\n\n      <span class=\"hljs-comment\">// Look in this folder</span>\n      <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;src/assets&quot;</span>,\n      <span class=\"hljs-comment\">// Or for a file</span>\n      <span class=\"hljs-attr\">src</span>: <span class=\"hljs-string\">&quot;src/assets/logo.png&quot;</span>,\n\n      <span class=\"hljs-comment\">// Copy to this folder</span>\n      <span class=\"hljs-attr\">dist</span>: <span class=\"hljs-string\">&quot;dist/assets&quot;</span>,\n\n      <span class=\"hljs-comment\">// Optional properties</span>\n\n      <span class=\"hljs-comment\">// Don&#x27;t include these files</span>\n      <span class=\"hljs-attr\">exclude</span>: <span class=\"hljs-string\">&quot;.DS_Store&quot;</span>,\n\n      <span class=\"hljs-comment\">// Only include these files</span>\n      <span class=\"hljs-attr\">include</span>: <span class=\"hljs-string\">&quot;*.img&quot;</span>,\n\n      <span class=\"hljs-comment\">// Don&#x27;t replicate the directory structure from `src`</span>\n      <span class=\"hljs-attr\">flat</span>: <span class=\"hljs-literal\">true</span>,\n    },\n  ],\n}\n</code></pre>\n<p>If a file matches multiple rules, it will be copied multiple times.</p>\n"
+    }
+  }
+]

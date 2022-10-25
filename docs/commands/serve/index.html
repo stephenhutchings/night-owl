@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Serve</title><meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="/night-owl/styles/index.css"><link rel="icon shortcut" href="/night-owl/assets/favicon.svg"></head><body> <header> <div class="wrap"><a href="/night-owl/"> <img src="/night-owl/assets/logo.svg" width="48">Night Owl</a></div> </header> <main class="wrap"> <nav>configuration<a href="/night-owl/docs/configuration/">Configuration</a><a href="/night-owl/docs/configuration/global-data/">Global data</a><a href="/night-owl/docs/configuration/copy/">Copy assets</a>commands<a href="/night-owl/docs/commands/build/">Build</a><a href="/night-owl/docs/commands/serve/">Serve</a><a href="/night-owl/docs/commands/watch/">Watch</a>templates<a href="/night-owl/docs/templates/">Templates</a><a href="/night-owl/docs/templates/layouts/">Layouts</a> </nav> <article> <h1>Serve</h1><p>In your <code>package.json</code> scripts, add the Night Owl <code>--serve</code> command option.</p> <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;serve&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;night-owl --serve&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> <p>You can now run Night Owl from the command line.</p> <pre><code class="language-bash">npm run serve
+</code></pre> <h2 id="combining-watch-and-serve">Combining watch and serve</h2> <p>Usually, you will call <code>serve</code> and <a href="/night-owl../watch/"><code>watch</code></a> together.</p> <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;start&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;night-owl --watch --serve&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> <h2 id="live-reloading">Live reloading</h2> <p>When Night Owl detects a change, it will reload the page. If only a CSS file has changed, it will reload all the CSS links on the page.</p> <h2 id="setting-the-port">Setting the port</h2> <p>You can configure which port to use in your <a href="/night-owl../config/"><code>config</code></a>. The default is <code>8080</code>.</p> <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">port</span>: <span class="hljs-number">3000</span>,
+}
+</code></pre> <p>If the port is unavailable, Night Owl will increment the number a handful of times to find one that is available.</p> </article> </main> <details class="wrap"> <summary>Data</summary> <p>This page was rendered with the following data.</p> <pre><code><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;footer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/output.json&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Output&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.s-ings.com/&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s-ings.com&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;collections&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;all&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;commands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;templates&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;configuration&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;filters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;keys&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;configuration&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;commands&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;templates&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Serve&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;layout&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;_includes/layouts/docs&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;tags&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;commands&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;page&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/docs/commands/serve/&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;inputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;src/docs/commands/serve.md&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;outputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dist/docs/commands/serve/index.html&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre> </details> <footer> <div class="wrap"> <ul> <li><a href="/night-owl/output.json">Output</a></li> <li><a href="https://www.s-ings.com/">s-ings.com</a></li> </ul> </div> </footer> </body></html>

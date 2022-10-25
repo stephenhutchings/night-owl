@@ -1,0 +1,293 @@
+@font-face {
+  src: url("/assets/fonts/Maestro-Light.woff2");
+  font-family: "maestro";
+}
+@font-face {
+  src: url("/assets/fonts/Maestro-SemiBold.woff2");
+  font-family: "maestro";
+  font-weight: bold;
+}
+html {
+  font-family: "maestro", system-ui, sans-serif;
+  background: #012;
+  /* background: red; */
+  color: #dcd;
+  font-size: 18px;
+  letter-spacing: 0.005em;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong {
+  color: #fff;
+}
+
+* {
+  margin: 0;
+}
+
+* ~ * {
+  margin-top: 1rem;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: #c4d;
+  text-decoration-color: #637;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background-color: rgba(204, 68, 221, 0.4);
+}
+
+.wrap {
+  max-width: 720px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+header {
+  background: #012;
+  padding: 1rem 0 0;
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+}
+
+header a {
+  text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  align-content: center;
+}
+
+code {
+  font-family: Menlo, monospace;
+  font-weight: bold;
+  font-size: 89%;
+}
+
+pre code {
+  font-weight: normal;
+  background: #123;
+  display: block;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+h2,
+h3 {
+  font-size: 1.2em;
+}
+
+* + h2 {
+  margin-top: 3rem;
+}
+
+.hljs-bullet,
+.hljs-deletion,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-template-variable,
+.hljs-variable {
+  color: #f2777a;
+}
+
+.hljs-attr,
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-symbol,
+.hljs-variable.constant_ {
+  color: #f280ac;
+}
+
+.hljs-class .hljs-title,
+.hljs-title,
+.hljs-title.class_ {
+  color: #fc6;
+}
+
+.hljs-strong {
+  font-weight: 700;
+  color: #fc6;
+}
+
+.hljs-addition,
+.hljs-code,
+.hljs-string,
+.hljs-title.class_.inherited__ {
+  color: #99ccaf;
+}
+
+.hljs-built_in,
+.hljs-doctag,
+.hljs-keyword.hljs-atrule,
+.hljs-quote,
+.hljs-regexp {
+  color: #6cc;
+}
+
+.hljs-attribute,
+.hljs-function .hljs-title,
+.hljs-section,
+.hljs-title.function_,
+.ruby .hljs-property {
+  color: #69c;
+}
+
+.diff .hljs-meta,
+.hljs-keyword,
+.hljs-template-tag,
+.hljs-type {
+  color: #c9c;
+}
+
+.hljs-emphasis {
+  color: #c9c;
+  font-style: italic;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+  color: #a3685a;
+}
+
+.hljs-meta .hljs-keyword,
+.hljs-meta-keyword {
+  font-weight: 700;
+}
+
+.hljs-punctuation {
+  color: #776e84;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta,
+.hljs-quote {
+  color: #6b6272;
+}
+
+#sidebar {
+  font-size: 16px;
+}
+#sidebar section + section {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+#nav-header {
+  height: 3em;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+  position: relative;
+  background: white;
+  background-clip: padding-box;
+}
+
+#nav-button {
+  padding: 0.75em;
+  margin-left: -0.75em;
+  border-radius: 0;
+}
+
+#nav-toggle:checked + #nav-content {
+  opacity: 1;
+  transform: translateZ(0);
+  pointer-events: all;
+}
+
+#example-code,
+#example-code code,
+#example-code pre {
+  height: 100%;
+}
+
+#example-code pre {
+  margin-bottom: 0;
+}
+
+@media (min-width: 601px) {
+  #sidebar {
+    min-width: 160px;
+  }
+}
+@media (min-height: 800px) {
+  #sidebar {
+    top: 1em;
+    position: sticky;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  #sidebar {
+    font-size: 16px;
+    z-index: 1;
+    top: -2px;
+    position: sticky;
+  }
+  #sidebar ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.5rem -0.25rem;
+  }
+  #sidebar li {
+    margin: 0 0.25rem 0.5rem;
+  }
+  #sidebar a {
+    padding: 0.25rem 0.75rem;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  #sidebar a:hover, #sidebar a:focus {
+    text-decoration: none;
+    background: grey;
+  }
+  #nav-content {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    right: -1rem;
+    margin-top: -1px;
+    height: calc(100vh - 3em);
+    flex-direction: column;
+    z-index: -1;
+    display: flex !important;
+    opacity: 0;
+    transform: translate3d(0, -40px, 0);
+    pointer-events: none;
+    transition: opacity 300ms, transform 300ms;
+  }
+  #nav-sections {
+    background: white;
+    padding: 1rem;
+    overflow: auto;
+  }
+  #nav-exit {
+    flex-grow: 1;
+    background: rgba(0, 0, 255, 0.6);
+  }
+}

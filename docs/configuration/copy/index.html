@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Copy assets</title><meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="/night-owl/styles/index.css"><link rel="icon shortcut" href="/night-owl/assets/favicon.svg"></head><body> <header> <div class="wrap"><a href="/night-owl/"> <img src="/night-owl/assets/logo.svg" width="48">Night Owl</a></div> </header> <main class="wrap"> <nav>configuration<a href="/night-owl/docs/configuration/">Configuration</a><a href="/night-owl/docs/configuration/global-data/">Global data</a><a href="/night-owl/docs/configuration/copy/">Copy assets</a>commands<a href="/night-owl/docs/commands/build/">Build</a><a href="/night-owl/docs/commands/serve/">Serve</a><a href="/night-owl/docs/commands/watch/">Watch</a>templates<a href="/night-owl/docs/templates/">Templates</a><a href="/night-owl/docs/templates/layouts/">Layouts</a> </nav> <article> <h1>Copy assets</h1><p>If you need to copy assets from one location to another, use <code>copy</code>.</p> <p>Use an array of rule objects to choose which files should be copied.</p> <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">copy</span>: [
+    {
+      <span class="hljs-comment">// Required properties</span>
+
+      <span class="hljs-comment">// Look in this folder</span>
+      <span class="hljs-attr">src</span>: <span class="hljs-string">&quot;src/assets&quot;</span>,
+      <span class="hljs-comment">// Or for a file</span>
+      <span class="hljs-attr">src</span>: <span class="hljs-string">&quot;src/assets/logo.png&quot;</span>,
+
+      <span class="hljs-comment">// Copy to this folder</span>
+      <span class="hljs-attr">dist</span>: <span class="hljs-string">&quot;dist/assets&quot;</span>,
+
+      <span class="hljs-comment">// Optional properties</span>
+
+      <span class="hljs-comment">// Don&#x27;t include these files</span>
+      <span class="hljs-attr">exclude</span>: <span class="hljs-string">&quot;.DS_Store&quot;</span>,
+
+      <span class="hljs-comment">// Only include these files</span>
+      <span class="hljs-attr">include</span>: <span class="hljs-string">&quot;*.img&quot;</span>,
+
+      <span class="hljs-comment">// Don&#x27;t replicate the directory structure from `src`</span>
+      <span class="hljs-attr">flat</span>: <span class="hljs-literal">true</span>,
+    },
+  ],
+}
+</code></pre> <p>If a file matches multiple rules, it will be copied multiple times.</p> </article> </main> <details class="wrap"> <summary>Data</summary> <p>This page was rendered with the following data.</p> <pre><code><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;footer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/output.json&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Output&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.s-ings.com/&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s-ings.com&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;collections&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;all&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;commands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;templates&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;configuration&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;filters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;keys&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;configuration&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;commands&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;templates&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Copy assets&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;layout&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;_includes/layouts/docs&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;tags&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;configuration&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;sort&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;page&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/docs/configuration/copy/&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;inputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;src/docs/configuration/copy.md&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;outputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dist/docs/configuration/copy/index.html&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre> </details> <footer> <div class="wrap"> <ul> <li><a href="/night-owl/output.json">Output</a></li> <li><a href="https://www.s-ings.com/">s-ings.com</a></li> </ul> </div> </footer> </body></html>

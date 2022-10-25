@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Build</title><meta name="format-detection" content="telephone=no"><link rel="stylesheet" href="/night-owl/styles/index.css"><link rel="icon shortcut" href="/night-owl/assets/favicon.svg"></head><body> <header> <div class="wrap"><a href="/night-owl/"> <img src="/night-owl/assets/logo.svg" width="48">Night Owl</a></div> </header> <main class="wrap"> <nav>configuration<a href="/night-owl/docs/configuration/">Configuration</a><a href="/night-owl/docs/configuration/global-data/">Global data</a><a href="/night-owl/docs/configuration/copy/">Copy assets</a>commands<a href="/night-owl/docs/commands/build/">Build</a><a href="/night-owl/docs/commands/serve/">Serve</a><a href="/night-owl/docs/commands/watch/">Watch</a>templates<a href="/night-owl/docs/templates/">Templates</a><a href="/night-owl/docs/templates/layouts/">Layouts</a> </nav> <article> <h1>Build</h1><p>In your <code>package.json</code> scripts, add the Night Owl <code>--build</code> command option.</p> <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;night-owl --build&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> <p>You can now run Night Owl from the command line.</p> <pre><code class="language-bash">npm run build
+</code></pre> <h2 id="running-a-production-build">Running a production build</h2> <p>During <code>build</code>, you may want to run extra transforms on your output. One way to do that is to set a <code>NODE_ENV</code> variable before invoking Night Owl.</p> <p>For example…</p> <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;NODE_ENV=production night-owl --build&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre> <p>Then adjust your <a href="/night-owl../config/"><code>config</code></a> to use the new environment variable.</p> <p>For example</p> <pre><code class="language-js"><span class="hljs-keyword">import</span> someMinifier <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;someMinifier&quot;</span>
+
+<span class="hljs-keyword">const</span> isProduction = process.<span class="hljs-property">env</span>.<span class="hljs-property">NODE_ENV</span> === <span class="hljs-string">&quot;production&quot;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">transforms</span>: isProduction ? [someMinifier] : <span class="hljs-literal">undefined</span>,
+}
+</code></pre> </article> </main> <details class="wrap"> <summary>Data</summary> <p>This page was rendered with the following data.</p> <pre><code><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;footer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/output.json&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Output&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;href&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://www.s-ings.com/&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s-ings.com&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;collections&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;all&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;commands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;templates&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;configuration&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>...<span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;filters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;keys&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;configuration&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;commands&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">&quot;templates&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Build&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;layout&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;_includes/layouts/docs&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;tags&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-string">&quot;commands&quot;</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;page&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/docs/commands/build/&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;inputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;src/docs/commands/build.md&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;outputPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dist/docs/commands/build/index.html&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span></code></pre> </details> <footer> <div class="wrap"> <ul> <li><a href="/night-owl/output.json">Output</a></li> <li><a href="https://www.s-ings.com/">s-ings.com</a></li> </ul> </div> </footer> </body></html>
