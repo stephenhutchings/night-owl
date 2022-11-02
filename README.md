@@ -9,7 +9,7 @@ Night Owl features:
 - One-to-many pages
 - Pug, Markdown, Sass or JavaScript templates
 - Build, watch and serve commands
-- esmodule ready
+- ECMAScript module ready
 
 ## Is this ready to use?
 
