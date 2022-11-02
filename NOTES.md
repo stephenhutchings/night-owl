@@ -69,8 +69,6 @@ paginate: {
 
 Un-implemented ideas.
 
-
-
 ### Doc sections
 
 Convert example "./src" to "./docs"
@@ -103,15 +101,16 @@ Convert example "./src" to "./docs"
 ### To check
 
 Module dependencies won't retrigger a build.
-q: Can a module's dependencies be cheaply extracted during compile? 
+q: Can a module's dependencies be cheaply extracted during compile?
 a: Yes, but the import cache cannot be cleared.
-  - https://github.com/nodejs/modules/issues/307
-  - https://github.com/FredKSchott/esm-hmr
+
+- https://github.com/nodejs/modules/issues/307
+- https://github.com/FredKSchott/esm-hmr
 
 ### No render for serve
 
 If running serve and watch, don't render everything (anything?) to disk. Just
 let the server request a specific URL, check if it exists in the pages array,
-and render on demand. Would also need to check if it exists in the copy and
-proxy requests through. Could it even be the import cache fix using a custom
+and render on demand. Fallback to using file system for pages not-found in the
+template list. Could it even be the import cache fix using a custom
 resolver?
